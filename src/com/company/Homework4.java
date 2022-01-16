@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,7 +14,8 @@ public class Homework4 {
         colum = enterColums();
 
         if (checkSquare(row,colum)){
-              creationMatrix(row,colum);
+//              creationMatrix(row,colum);
+              changeDiagonals(creationMatrix(row,colum),row,colum);
         }
 
     }
@@ -67,7 +69,7 @@ public class Homework4 {
         }
     }
 //    Создаём матрицу
-    public static void creationMatrix(int a, int b){
+    public static double[][] creationMatrix(int a, int b){
         double [][] originMatrix = new double[a][b];
         Random random = new Random();
         double borderLeft =-50.00;
@@ -79,11 +81,29 @@ public class Homework4 {
             }
             System.out.println();
         }
+        return originMatrix;
 
     }
 //   Меняем местами диагонали
-//    public static void changeDiagonals(){
-//
-//    }
+    public static void changeDiagonals(double[][] originalMatrix,int a,int b){ //в принципе можно было и только 1 раз а передать, проверку то уже сделали
+        System.out.println("а теперь меням местами диагонали");
+        double [][] newMatrix = new double[a][b];
+        double [][] saveMatrix = new double[a][b];
+        for (int i = 0 ; i < originalMatrix.length; i++){
+            for (int j = 0; j < originalMatrix[i].length; j++){
+                saveMatrix[i][j] = originalMatrix[i][j];
+                newMatrix[i][j] = originalMatrix[i][originalMatrix.length-1-j];
+                newMatrix[i][originalMatrix[i].length-1-j] = originalMatrix[i][j];
+
+            }
+        }
+        for (int i = 0 ; i < originalMatrix.length; i++){
+            for (int j = 0; j < originalMatrix[i].length; j++) {
+                System.out.printf("%.2f   ", newMatrix[i][j]);
+            }
+            System.out.println();
+        }
+
+    }
 
 }
