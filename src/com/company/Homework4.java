@@ -1,22 +1,26 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Homework4 {
     public static void main(String[] args) {
-        int row;
-        int colum;
+        int row = 1;
+        int colum = 0;
         boolean check;
         System.out.println("Начнём создание матрицы");
         row = enterRows();
         colum = enterColums();
 
-        if (checkSquare(row,colum)){
-//              creationMatrix(row,colum);
-              changeDiagonals(creationMatrix(row,colum),row,colum);
+        while (!checkSquare(row,colum)){
+            row = enterRows();
+            colum = enterColums();
         }
+        changeDiagonals(creationMatrix(row,colum),row,colum);
+//        if (checkSquare(row,colum)){
+//
+//              changeDiagonals(creationMatrix(row,colum),row,colum);
+//        }
 
     }
 
@@ -63,9 +67,9 @@ public class Homework4 {
             return true;
         } else {
             System.out.println("матрица не получится квадратной - нужно вводить всё сначала");
-            a = enterRows();
-            b = enterColums();
-            return checkSquare(a,b);
+//            a = enterRows();
+//            b = enterColums();
+            return false;//checkSquare(a,b);
         }
     }
 //    Создаём матрицу
@@ -85,7 +89,7 @@ public class Homework4 {
 
     }
 //   Меняем местами диагонали
-    public static void changeDiagonals(double[][] originalMatrix,int a,int b){ //в принципе можно было и только 1 раз а передать, проверку то уже сделали
+    public static void changeDiagonals(double[][] originalMatrix,int a,int b){ //в принципе можно было и только 1 раз а передать, проверку то уже сделали, но я всё равно оставил так как благодаря этому нашел баг в проверке
         System.out.println("а теперь меням местами диагонали");
         double [][] newMatrix = new double[a][b];
         double [][] saveMatrix = new double[a][b];
