@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class Homework4 {
     public static void main(String[] args) {
         System.out.println("Начнём создание матрицы");
-        System.out.println("Строк " + enterRows());
-        System.out.println("Столбцов " + enterColums());
+          if (checkSquare(enterRows(),enterColums())){
 
+        }
 
     }
 
@@ -48,6 +48,17 @@ public class Homework4 {
             return enterColums();
         }
     }
-
+//  Проверяем что матрица квадратная
+    public static boolean checkSquare(int a, int b){
+        if (a == b) {
+            System.out.println("Матрица квадратная, можем продолжать");
+            return true;
+        } else {
+            System.out.println("матрица не получится квадратной - нужно вводить всё сначала");
+            a = enterRows();
+            b = enterColums();
+            return checkSquare(a,b);
+        }
+    }
 
 }
