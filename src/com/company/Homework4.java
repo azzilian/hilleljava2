@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class Homework4 {
     public static void main(String[] args) {
-        int row = 1;
-        int colum = 0;
+        int row ;
+        int colum ;
         boolean check;
         System.out.println("Начнём создание матрицы");
         row = enterRows();
@@ -17,10 +17,6 @@ public class Homework4 {
             colum = enterColums();
         }
         changeDiagonals(creationMatrix(row,colum),row,colum);
-//        if (checkSquare(row,colum)){
-//
-//              changeDiagonals(creationMatrix(row,colum),row,colum);
-//        }
 
     }
 
@@ -67,8 +63,6 @@ public class Homework4 {
             return true;
         } else {
             System.out.println("матрица не получится квадратной - нужно вводить всё сначала");
-//            a = enterRows();
-//            b = enterColums();
             return false;//checkSquare(a,b);
         }
     }
