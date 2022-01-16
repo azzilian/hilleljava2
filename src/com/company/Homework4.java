@@ -11,7 +11,7 @@ public class Homework4 {
         System.out.println("Начнём создание матрицы");
         row = enterRows();
         colum = enterColums();
-
+// Следим за изменением ввода
         while (!checkSquare(row,colum)){
             row = enterRows();
             colum = enterColums();
