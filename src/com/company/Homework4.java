@@ -5,9 +5,15 @@ import java.util.Scanner;
 
 public class Homework4 {
     public static void main(String[] args) {
+        int row;
+        int colum;
+        boolean check;
         System.out.println("Начнём создание матрицы");
-          if (checkSquare(enterRows(),enterColums())){
+        row = enterRows();
+        colum = enterColums();
 
+        if (checkSquare(row,colum)){
+              creationMatrix(row,colum);
         }
 
     }
@@ -60,5 +66,24 @@ public class Homework4 {
             return checkSquare(a,b);
         }
     }
+//    Создаём матрицу
+    public static void creationMatrix(int a, int b){
+        double [][] originMatrix = new double[a][b];
+        Random random = new Random();
+        double borderLeft =-50.00;
+        double borderRight = 50.00;
+        for (int i = 0; i < originMatrix.length; i++){
+            for (int j = 0; j < originMatrix[i].length; j++){
+                originMatrix[i][j] = borderLeft + random.nextDouble() * (borderRight - borderLeft) ;
+                System.out.printf("%.2f   ",  originMatrix[i][j]);
+            }
+            System.out.println();
+        }
+
+    }
+//   Меняем местами диагонали
+//    public static void changeDiagonals(){
+//
+//    }
 
 }
