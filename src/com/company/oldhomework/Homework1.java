@@ -1,9 +1,9 @@
-package com.company;
+package com.company.oldhomework;
 
 import java.util.Scanner;
 
 public class Homework1 {
-    public static void main(String[] args) {
+    public static void main(String... args) {
 	    double bodyMassIndex; //Индекс массы тела
 
         Scanner scanner = new Scanner(System.in) ;
