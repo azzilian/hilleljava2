@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Homework5 {
     public static void main(String[] args) {
         System.out.println("Начнём создание коробок");
-
         Box box = new Box(enterName (), enterLength (), enterWidth (),enterHeight ());
         System.out.println("Объём коробки " + box.getName()+ " = "+ box.getVolume());
         Box box2 = new Box(enterName (), enterLength (), enterWidth (),enterHeight ());
@@ -18,7 +17,7 @@ public class Homework5 {
         System.out.println("Объём коробки " + box4.getName()+ " = "+ box.getVolume());
         Box box5 = new Box(enterName (), enterLength (), enterWidth (),enterHeight ());
         System.out.println("Объём коробки " + box5.getName()+ " = "+ box.getVolume());
-    }
+           }
 //    небольшие проверки
     public static int enterLength () {
         int a;
@@ -72,7 +71,6 @@ public class Homework5 {
         }
     }
     public static String enterName () {
-        int a;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите название коробки:");
         if (scanner.hasNext()) {
