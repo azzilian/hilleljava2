@@ -1,4 +1,4 @@
-package com.company;
+package com.company.oldhomework;
 
 import java.util.Random;
 import java.util.Scanner;
